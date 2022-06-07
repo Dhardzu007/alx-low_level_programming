@@ -2,18 +2,20 @@
 
 /**
  * main - Entry point
- * Return:0
+ *
+ * Description: prints _putchar using putchar prototype
+ *
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-char c[9] = "_putchar";
-int i = 0;
-while (i < 9)
-{
-_putchar(c[i]);
-i++;
-}
-_putchar('\n');
-return (0);
+	char num[] = "_putchar";
+	int ad;
+
+	for (ad = 0; ad < 8; ++ad)
+		_putchar (num[ad]);
+
+	_putchar('\n');
+
+	return (0);
 }
