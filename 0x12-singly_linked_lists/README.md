@@ -1,1 +1,1 @@
-learning about singly linked lists and how to use it in c languagee
+learning about singly linked lists in c programming
