@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * add_node - adds a new node at the beinning 
+ * add_node - adds a new node at the beinning
  * of a list_t list
  * @head: head of the linked list
  * @str: string to store in the list
