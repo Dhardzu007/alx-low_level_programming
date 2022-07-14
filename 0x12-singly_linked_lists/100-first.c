@@ -3,7 +3,7 @@
 void before(void) __attribute__((constructor));
 
 /**
- * befp\ore - print message before main executes
+ * before - print message before main executes
  */
 void before(void)
 {
