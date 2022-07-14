@@ -6,17 +6,22 @@
  * @h: singly linked list
  * Return: number of elements in the list
  */
-
 size_t print_list(const list_t *h)
 {
-	int i = 0;
+	size_t size = 0;
 
-	while (h != NULL)
+	while (h)
 	{
-		printf("[0] (nil)\n");
+		if (h->str == NULL)
+		{
+			printf("[%u] (nil)\n", h->len);
+			h = h->next;
+			++size;
+			continue;
+		}
+		printf("[%u] %s\n", h->len, h->str);
 		h = h->next;
+		++size;
 	}
-	i++;
-}
-return (i);
+	return (size);
 }
