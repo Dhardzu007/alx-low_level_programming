@@ -7,16 +7,18 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int n = 0;
+	unsigned int num = 0;
+	int len = 0;
 
-	if (!b)
+	if (b[len] == '\0')
 		return (0);
-	while (*b)
+
+	while ((b[len] == '0') || (b[len] == '1'))
 	{
-		if (*b != '0' && *b != '1')
-			return (0);
-		n = n * 2 + *b - '0';
-		++b;
+		num <<= 1;
+		num += b[len] - '0';
+		len++;
 	}
-	return (n);
+
+	return (num);
 }
