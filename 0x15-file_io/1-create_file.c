@@ -11,21 +11,30 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	ssize_t i = 0;
-	ssize_t w = 0;
 	int fd;
+	int nletters;
+	int rwr;
 
-	if (filename == NULL)
+	if (!filename)
 		return (-1);
-	for (i = 0; text_content && text_content[i]; i++)
-		;
-	fd = open(filename, O_CREAT | O_TRUNC | O_WRONLY, S_IRUSR | S_IWUSR);
+
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+
 	if (fd == -1)
 		return (-1);
-	if (i)
-		w = write(fd, text_content, i);
-	if (w == -1)
+
+	if (!text_content)
+		text_content = "";
+
+	for (nletters = 0; text_content[nletters]; nletters++)
+		;
+
+	rwr = write(fd, text_content, nletters);
+
+	if (rwr == -1)
 		return (-1);
+
 	close(fd);
+
 	return (1);
 }
