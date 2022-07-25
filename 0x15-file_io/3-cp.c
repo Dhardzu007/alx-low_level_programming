@@ -15,7 +15,7 @@ void error_wr(int fdr, int fdw, char *file_from, char *file_to)
 		r = read(fdr, buf, NBYTES);
 		if (r == -1)
 		{
-			dprints(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			exit(98);
 		}
 		if (r)
@@ -23,7 +23,7 @@ void error_wr(int fdr, int fdw, char *file_from, char *file_to)
 			w = write(fdw, buf, r);
 			if (w != r)
 			{
-				dprints(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 				exit(99);
 			}
 		}
