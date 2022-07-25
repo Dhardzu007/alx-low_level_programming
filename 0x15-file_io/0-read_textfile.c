@@ -22,7 +22,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buf = malloc(sizeof(char) * letters);
 	if (buf == NULL)
 		return (0);
-	fd = open(filename, 0_RDWR);
+	fd = open(filename, O_RDWR);
 	if (fd == -1)
 	{
 		free(buf);
